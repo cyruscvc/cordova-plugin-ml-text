@@ -24,21 +24,24 @@
       </feature>
     </config-file> 
 
-    <preference name="MLKIT_TEXT_RECOGNITION_VERSION" default="16.1.0"/>
+    <preference name="MLKIT_TEXT_RECOGNITION_VERSION" default="19.0.0"/>
+    
+    <preference name="MLKIT_COMMON_VERSION" default="18.11.0"/>
 
     <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <meta-data
-		      android:name="com.google.mlkit.vision.DEPENDENCIES"
-		      android:value="ocr" />
+              android:name="com.google.mlkit.vision.DEPENDENCIES"
+              android:value="ocr" />
     </config-file>
    
     <source-file src="src/android/Mltext.java" target-dir="src/com/neutrinos/mltextplugin/" />
+    
     <framework src="com.google.android.gms:play-services-mlkit-text-recognition:$MLKIT_TEXT_RECOGNITION_VERSION" />
+    <framework src="com.google.mlkit:common:$MLKIT_COMMON_VERSION" />
   
   </platform>
-
 
   <platform name="ios">
   <config-file target="config.xml" parent="/*">
